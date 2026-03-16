@@ -1,51 +1,41 @@
-# Romi Robot Project Portfolio
+# Mecha16 Romi
 
 ## Project Overview
-The Romi robot project aims to develop a versatile, programmable robot for educational and research purposes. It serves as a platform for exploring robotics, coding, and design.
+The Mecha16 Romi is an autonomous robot designed for various applications, integrating robust mechanical and electrical components to enhance functionality.
 
-## Design Specifications
-- **Dimensions**: 10” x 10” x 4”
-- **Weight**: 3 lbs
-- **Power Source**: Rechargeable battery
-- **Sensors**: Infrared, ultrasonic, and touch sensors
+## Architecture
+The architecture consists of multiple layers, including the following:
+1. **Mechanical Layer**: Custom chassis with motors, wheels, and sensor placements.
+2. **Control Layer**: Microcontroller interfacing with sensors and executing control algorithms.
+3. **Communication Layer**: Protocols for inter-module communication and external interfaces.
 
-## Mechanical Design
-The mechanical design of the Romi robot includes:
-- A robust chassis made of lightweight plastic.
-- A simple yet effective wheel system that allows smooth movement.
-- Mounting points for sensors and additional components.
+## Code Organization
+The project is structured into discrete modules for better manageability, including:
+- `src/`: Main source code files.
+- `include/`: Header files for declarations.
+- `lib/`: External libraries utilized in the project.
 
-### Components:
-- **Chassis**: 3D printed with customizable features.
-- **Wheels**: Rubber-coated for better traction.
-
-## Electrical Design
-The electrical design encompasses:
-- **Microcontroller**: Arduino compatible board for controlling all components.
-- **Power Management**: Efficient distribution of power to motors and sensors.
-
-### Electrical Schematics:
-- Detailed circuit diagrams can be found in the documentation folder.
-
-## Code Documentation
-The code is written in Arduino IDE and is organized into several libraries:
-- **Motor Control**: Handles movement of the robot.
-- **Sensor Management**: Integrates data from various sensors for navigation.
-- **Communication**: Manages serial communication with external devices.
+## Mechanical and Electrical Design Details
+- **Mechanical Design**: 
+  - Construction materials: Aluminum and plastic.
+  - Dimensions: [provide specific details].
+- **Electrical Design**: 
+  - Power supply: [provide specific battery specifications].
+  - Control system: ADC, PWM, and motor drivers are used for controlling movements.
 
 ## Features
 - Autonomous navigation
 - Obstacle detection and avoidance
-- Remote control capabilities through a mobile app
+- Wireless communication capabilities
 
 ## Demonstrations
-Several demonstrations can be conducted to showcase the capabilities of the Romi robot:
-- Line following
-- Obstacle course
-- Remote control operation
+Instructional videos showcasing various functionalities of the Mecha16 Romi in action:
+- [Demo 1: Autonomous Navigation](link-to-demo-1)
+- [Demo 2: Obstacle Avoidance](link-to-demo-2)
 
 ## Results
-The Romi robot has successfully completed various tests, proving its reliability and efficiency in obstacle avoidance and navigation tasks. Data collected from tests show consistent performance and adaptability to different environments.
+Performance metrics and results from various tests executed during development:
+- [insert performance details]
 
-## Video Demonstration
-Watch our video demonstration here: [Romi Robot Demonstration](#)
+## Video Information
+For a complete overview of the project, watch the comprehensive project video here: [Project Video](link-to-video)
