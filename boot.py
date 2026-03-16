@@ -1,11 +1,24 @@
-# boot.py -- run on boot to configure USB and filesystem
-# Put app code in main.py
+# @file boot.py
+# @brief MicroPython boot configuration for the MECHA16 Romi
+# @author Dylan-WALTY
+# @date 2026-03-16
+
+# This file is used to configure the boot process of MicroPython on the MECHA16 Romi platform.
+# Any initialization required for the robot should be handled here.
 
 import machine
-import pyb
-#pyb.main('main.py') # main script to run after this one
-#pyb.usb_mode('VCP+MSC') # act as a serial and a storage device
-#pyb.usb_mode('VCP+HID') # act as a serial device and a mouse
-#import network
-#network.country('US') # ISO 3166-1 Alpha-2 code, eg US, GB, DE, AU or XX for worldwide
-#network.hostname('...') # DHCP/mDNS hostname
+import time
+
+# Pin configuration and initialization
+led = machine.Pin(25, machine.Pin.OUT)
+
+# Function to flash the onboard LED
+def flash_led():
+    for _ in range(5):
+        led.on()
+        time.sleep(0.2)
+        led.off()
+        time.sleep(0.2)
+
+# Flash the LED on boot
+flash_led()
