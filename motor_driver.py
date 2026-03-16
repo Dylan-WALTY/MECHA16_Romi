@@ -1,33 +1,48 @@
-from pyb import Pin, Timer
+# motor_driver.py
 
-class Motor:
-    '''A motor driver interface encapsulated in a Python class. Works with
-       motor drivers using separate PWM and direction inputs such as the DRV8838
-       drivers present on the Romi chassis from Pololu.'''
-   
-    def __init__(self, PWM_pin: Pin, DIR_pin: Pin, nSLP_pin: Pin, tim: Timer, chan: int):
-        '''Initializes a Motor object'''
-        self.PWM_chan = tim.channel(chan, pin=PWM_pin, mode=Timer.PWM, pulse_width_percent=0)
-        self.DIR_pin = Pin(DIR_pin, mode=Pin.OUT_PP)
-        self.nSLP_pin = Pin(nSLP_pin, mode=Pin.OUT_PP)
+"""
+@file    motor_driver.py
+@brief   This module provides control algorithms for the MECHA16 Romi robot.
+@author  Dylan-WALTY
+@date    2026-03-16
 
-   
-    def set_effort(self, effort):
-        '''Sets the present effort requested from the motor based on an input value
-           between -100 and 100'''
-        if (effort >= 0):
-            self.DIR_pin.low()
-            self.PWM_chan.pulse_width_percent(effort)
-        else:
-            self.DIR_pin.high()
-            self.PWM_chan.pulse_width_percent(-effort)
-           
-    def enable(self):
-        '''Enables the motor driver by taking it out of sleep mode into brake mode'''
-        self.set_effort(0)
-        self.nSLP_pin.high()
-       
-           
-    def disable(self):
-        '''Disables the motor driver by taking it into sleep mode'''
-        self.nSLP_pin.low()
+This module includes classes and methods to manage the motor driver functionality, enabling motion control and operation of the MECHA16 Romi robot.
+"""
+
+class MotorDriver:
+    """
+    @brief   Class to control the motors of the MECHA16 Romi robot.
+    @param   None
+    @return  None
+    """
+
+    def __init__(self, motor1, motor2):
+        """
+        @brief   Initializes the MotorDriver with two motors.
+        @param   motor1: The first motor to control.
+        @param   motor2: The second motor to control.
+        @return  None
+        """
+        self.motor1 = motor1
+        self.motor2 = motor2
+
+    def set_speed(self, speed1, speed2):
+        """
+        @brief   Sets the speed for each motor.
+        @param   speed1: Speed for motor1.
+        @param   speed2: Speed for motor2.
+        @return  None
+        """
+        self.motor1.set_speed(speed1)
+        self.motor2.set_speed(speed2)
+
+    def stop(self):
+        """
+        @brief   Stops both motors.
+        @param   None
+        @return  None
+        """
+        self.motor1.stop()
+        self.motor2.stop()
+
+# Additional functionality can be added as needed.
