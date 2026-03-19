@@ -601,7 +601,7 @@ Hold the robot still until `GYRO:3/3` is displayed. `calibration.txt` is written
 
 ## 16. Video Demo
 
-> 📹 **[Insert YouTube/video link here]**
+> 📹 **[(https://youtu.be/iQ_Vchzl95k)]**
 
 ---
 
