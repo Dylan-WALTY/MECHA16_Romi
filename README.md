@@ -87,8 +87,8 @@ The **BNO055** 9-DOF sensor runs in **IMU mode (0x08)** — gyroscope + accelero
 
 | | |
 |---|---|
-| ![Romi top view](docs/romi_top.jpg) | ![Romi sensor array](docs/romi_sensors.jpg) |
-| *Top view — Nucleo, IMU, and Bluetooth module* | *Front — 8-element IR array and bump switches* |
+| ![Romi top view](romi_top.jpg) |
+| *Top view — Nucleo, IMU, and Bluetooth module* |
 
 ---
 
