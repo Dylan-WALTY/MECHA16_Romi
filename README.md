@@ -292,7 +292,7 @@ Motor velocity step-response data is collected via the `l` (left) and `r` (right
 > 📊 **Replace this line with your step response plot.**  
 > Add the image to your repo (e.g. `docs/step_response.png`) and update the line below.
 
-![Motor step response](docs/step_response.png)  
+![Motor step response](step_response.png)  
 *Motor step response at 150 mm/s setpoint. Gains: Kp = 0.037, Ki = 0.010, Kff = 0.096.*
 
 ---
