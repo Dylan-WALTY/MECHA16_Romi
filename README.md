@@ -67,17 +67,13 @@ The robot successfully completed the full course during the final demonstration.
 | Bump Switch 1 | Interrupt | B5 |
 | Bump Switch 2 | Interrupt | B4 |
 
-### Wiring Diagram
-
-<img width="1574" height="1056" alt="image" src="https://github.com/user-attachments/assets/28fcce13-0d5c-4ad1-b656-de22706f2f4b" />
-
 ### Motor Driver
 
 The Romi uses **DRV8838** H-bridge drivers built into the chassis PCB. Both motors share a 20 kHz PWM timer (Timer 3). The `Motor.set_effort(value)` method accepts a signed percentage in [−100, 100], handling direction pin polarity automatically.
 
 ### Encoders
 
-Quadrature encoders run at 12 PPR, decoded to 1440 counts/rev by the STM32's hardware `ENC_AB` timer mode due to the motor-wheel gear ratio. Each wheel has a radius of 35 mm giving a circumference of ≈ 219.9 mm. Timer 2 drives the left encoder and Timer 1 drives the right. The driver handles 16-bit counter overflow in both directions.
+Quadrature encoders run at 360 PPR, decoded to 1440 counts/rev by the STM32's hardware `ENC_AB` timer mode. Each wheel has a radius of 35 mm giving a circumference of ≈ 219.9 mm. Timer 2 drives the left encoder and Timer 1 drives the right. The driver handles 16-bit counter overflow in both directions.
 
 ### IMU
 
@@ -87,8 +83,8 @@ The **BNO055** 9-DOF sensor runs in **IMU mode (0x08)** — gyroscope + accelero
 
 | | |
 |---|---|
-| ![Romi top view](romi_top.jpg) |
-| *Top view — Nucleo, IMU, and Bluetooth module* |
+| ![Romi top view](docs/romi_top.jpg) | ![Romi sensor array](docs/romi_sensors.jpg) |
+| *Top view — Nucleo, IMU, and Bluetooth module* | *Front — 8-element IR array and bump switches* |
 
 ---
 
@@ -289,7 +285,10 @@ Each motor task computes the **per-tick arc delta** (mm moved since last tick) a
 
 Motor velocity step-response data is collected via the `l` (left) and `r` (right) commands. The motor runs to the setpoint, buffers 30 velocity/timestamp pairs, then stops and streams the data as `time_ms, velocity_mm_s` CSV over USB VCP. This data was plotted in Python to evaluate rise time, overshoot, and steady-state error before finalising the gains below.
 
-![Motor step response](step_response.png)  
+> 📊 **Replace this line with your step response plot.**  
+> Add the image to your repo (e.g. `docs/step_response.png`) and update the line below.
+
+![Motor step response](docs/step_response.png)  
 *Motor step response at 150 mm/s setpoint. Gains: Kp = 0.037, Ki = 0.010, Kff = 0.096.*
 
 ---
@@ -328,7 +327,7 @@ The correction is applied with opposite signs to each wheel setpoint. Because th
 
 While in manual line-follow mode (`d` command), centroid values and timestamps are buffered and streamed over USB after the run stops — useful for diagnosing oscillation or sensor placement issues.
 
-![Centroid vs time](centroid_plot.png)
+![Centroid vs time](docs/centroid_plot.png)
 *Centroid signal during a full manual line-follow run. Oscillations through tight curves are visible; they stayed within ±1.5 sensor widths.*
 
 ---
@@ -602,7 +601,7 @@ Hold the robot still until `GYRO:3/3` is displayed. `calibration.txt` is written
 
 ## 16. Video Demo
 
-> 📹 **[(https://youtu.be/iQ_Vchzl95k)]**
+> 📹 **[Insert YouTube/video link here]**
 
 ---
 
