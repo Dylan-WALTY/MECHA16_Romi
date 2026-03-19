@@ -328,7 +328,7 @@ The correction is applied with opposite signs to each wheel setpoint. Because th
 
 While in manual line-follow mode (`d` command), centroid values and timestamps are buffered and streamed over USB after the run stops — useful for diagnosing oscillation or sensor placement issues.
 
-![Centroid vs time](docs/centroid_plot.png)
+![Centroid vs time](centroid_plot.png)
 *Centroid signal during a full manual line-follow run. Oscillations through tight curves are visible; they stayed within ±1.5 sensor widths.*
 
 ---
