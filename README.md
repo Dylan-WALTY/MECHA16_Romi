@@ -73,7 +73,7 @@ The Romi uses **DRV8838** H-bridge drivers built into the chassis PCB. Both moto
 
 ### Encoders
 
-Quadrature encoders run at 360 PPR, decoded to 1440 counts/rev by the STM32's hardware `ENC_AB` timer mode. Each wheel has a radius of 35 mm giving a circumference of ≈ 219.9 mm. Timer 2 drives the left encoder and Timer 1 drives the right. The driver handles 16-bit counter overflow in both directions.
+Quadrature encoders run at 12 PPR, decoded to 1440 counts/rev by the STM32's hardware `ENC_AB` timer mode due to the motor-wheel gear ratio. Each wheel has a radius of 35 mm giving a circumference of ≈ 219.9 mm. Timer 2 drives the left encoder and Timer 1 drives the right. The driver handles 16-bit counter overflow in both directions.
 
 ### IMU
 
