@@ -289,9 +289,6 @@ Each motor task computes the **per-tick arc delta** (mm moved since last tick) a
 
 Motor velocity step-response data is collected via the `l` (left) and `r` (right) commands. The motor runs to the setpoint, buffers 30 velocity/timestamp pairs, then stops and streams the data as `time_ms, velocity_mm_s` CSV over USB VCP. This data was plotted in Python to evaluate rise time, overshoot, and steady-state error before finalising the gains below.
 
-> 📊 **Replace this line with your step response plot.**  
-> Add the image to your repo (e.g. `docs/step_response.png`) and update the line below.
-
 ![Motor step response](step_response.png)  
 *Motor step response at 150 mm/s setpoint. Gains: Kp = 0.037, Ki = 0.010, Kff = 0.096.*
 
