@@ -83,7 +83,7 @@ The **BNO055** 9-DOF sensor runs in **IMU mode (0x08)** — gyroscope + accelero
 
 | | |
 |---|---|
-| ![Romi top view](docs/romi_top.jpg) | ![Romi sensor array](docs/romi_sensors.jpg) |
+| romi_top.jpg |
 | *Top view — Nucleo, IMU, and Bluetooth module* | *Front — 8-element IR array and bump switches* |
 
 ---
@@ -285,10 +285,7 @@ Each motor task computes the **per-tick arc delta** (mm moved since last tick) a
 
 Motor velocity step-response data is collected via the `l` (left) and `r` (right) commands. The motor runs to the setpoint, buffers 30 velocity/timestamp pairs, then stops and streams the data as `time_ms, velocity_mm_s` CSV over USB VCP. This data was plotted in Python to evaluate rise time, overshoot, and steady-state error before finalising the gains below.
 
-> 📊 **Replace this line with your step response plot.**  
-> Add the image to your repo (e.g. `docs/step_response.png`) and update the line below.
-
-![Motor step response](docs/step_response.png)  
+!(step_response.png)  
 *Motor step response at 150 mm/s setpoint. Gains: Kp = 0.037, Ki = 0.010, Kff = 0.096.*
 
 ---
@@ -327,7 +324,7 @@ The correction is applied with opposite signs to each wheel setpoint. Because th
 
 While in manual line-follow mode (`d` command), centroid values and timestamps are buffered and streamed over USB after the run stops — useful for diagnosing oscillation or sensor placement issues.
 
-![Centroid vs time](docs/centroid_plot.png)
+!(centroid_plot.png)
 *Centroid signal during a full manual line-follow run. Oscillations through tight curves are visible; they stayed within ±1.5 sensor widths.*
 
 ---
