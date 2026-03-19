@@ -67,6 +67,10 @@ The robot successfully completed the full course during the final demonstration.
 | Bump Switch 1 | Interrupt | B5 |
 | Bump Switch 2 | Interrupt | B4 |
 
+### Wiring Diagram
+
+<img width="1574" height="1056" alt="image" src="https://github.com/user-attachments/assets/28fcce13-0d5c-4ad1-b656-de22706f2f4b" />
+
 ### Motor Driver
 
 The Romi uses **DRV8838** H-bridge drivers built into the chassis PCB. Both motors share a 20 kHz PWM timer (Timer 3). The `Motor.set_effort(value)` method accepts a signed percentage in [−100, 100], handling direction pin polarity automatically.
